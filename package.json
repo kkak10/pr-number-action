@@ -1,23 +1,22 @@
 {
-  "name": "typescript-action",
-  "version": "0.0.0",
-  "private": true,
-  "description": "TypeScript template action",
+  "name": "pr-number-action",
+  "version": "1.0.0",
+  "description": "github action for get pr number",
   "main": "lib/main.js",
   "scripts": {
-    "build": "tsc",
-    "test": "jest"
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/actions/typescript-action.git"
+    "url": "git+https://github.com/kkak10/pr-number-action.git"
   },
   "keywords": [
     "actions",
-    "node",
-    "setup"
+    "pr number",
+    "pr",
+    "number"
   ],
-  "author": "YourNameOrOrganization",
+  "author": "kkak10",
   "license": "MIT",
   "dependencies": {
     "@actions/core": "^1.0.0",
