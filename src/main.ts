@@ -1,16 +1,17 @@
 import * as core from '@actions/core';
-import {wait} from './wait'
+import * as github from "@actions/github";
 
 async function run() {
   try {
-    const ms = core.getInput('milliseconds');
-    console.log(`Waiting ${ms} milliseconds ...`)
+    const pr = github.context.payload.pull_request;
 
-    core.debug((new Date()).toTimeString())
-    await wait(parseInt(ms));
-    core.debug((new Date()).toTimeString())
-
-    core.setOutput('time', new Date().toTimeString());
+    if (pr && pr.number) {
+      core.setOutput('pr', pr.number.toString());
+    } else if (!pr) {
+      throw new Error('pull request is not found.');
+    } else {
+      throw new Error('pull request number is not exist.');
+    }
   } catch (error) {
     core.setFailed(error.message);
   }
