@@ -3,10 +3,13 @@ description: 'get pr number'
 author: 'kkak10'
 inputs:
   github-token:
-    description: 'github token'
+    description: The GitHub token used to create an authenticated client.
+outputs:
+  pr:
+    description: The PR if one was found. (e.g. '345' for #345)
 runs:
   using: 'node12'
-  main: 'lib/main.js'
+  main: 'src/main.js'
 branding:
   icon: anchor
   color: green
